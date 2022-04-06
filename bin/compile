@@ -314,7 +314,7 @@ restore_cache | output "$LOG_FILE"
 
 build_dependencies() {
   local cache_status start
-
+  source $HOME/.cargo/env
   cache_status="$(get_cache_status "$CACHE_DIR")"
   start=$(nowms)
   if [[ "$YARN_2" == "true" ]]; then
