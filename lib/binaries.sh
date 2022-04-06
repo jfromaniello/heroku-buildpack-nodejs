@@ -156,5 +156,5 @@ install_rust() {
     echo "Unable to download rust: $code" && false
   fi
 
-  sh -s /tmp/rustup.sh -y
+  sh /tmp/rustup.sh -y
 }
