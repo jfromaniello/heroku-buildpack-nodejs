@@ -148,7 +148,7 @@ install_rust() {
   local code resolve_result
 
   url=https://sh.rustup.rs
-  echo "Downloading and installing rust from $url"
+  echo "Downloading and installing rust from this url: $url"
 
   code=$(curl "$url" -L --silent --fail --retry 5 --retry-max-time 15 -o /tmp/rustup.sh --write-out "%{http_code}")
 
@@ -156,5 +156,5 @@ install_rust() {
     echo "Unable to download rust: $code" && false
   fi
 
-  sh /tmp/rustup.sh
+  sh -s /tmp/rustup.sh -y
 }
