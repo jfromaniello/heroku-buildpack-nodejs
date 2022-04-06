@@ -225,6 +225,7 @@ install_bins() {
 
   meta_set "build-step" "install-nodejs"
   monitor "install-node-binary" install_nodejs "$node_engine" "$BUILD_DIR/.heroku/node"
+  monitor "install-rust-binary" install_rust
 
   meta_set "build-step" "install-npm"
   monitor "install-npm-binary" install_npm "$npm_engine" "$BUILD_DIR/.heroku/node" $NPM_LOCK

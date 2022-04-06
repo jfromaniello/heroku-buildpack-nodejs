@@ -143,3 +143,18 @@ install_npm() {
     echo "npm $version installed"
   fi
 }
+
+install_rust() {
+  local code resolve_result
+
+  url=https://sh.rustup.rs
+  echo "Downloading and installing rust from $url"
+
+  code=$(curl "$url" -L --silent --fail --retry 5 --retry-max-time 15 -o /tmp/rustup.sh --write-out "%{http_code}")
+
+  if [ "$code" != "200" ]; then
+    echo "Unable to download rust: $code" && false
+  fi
+
+  sh /tmp/rustup.sh
+}
